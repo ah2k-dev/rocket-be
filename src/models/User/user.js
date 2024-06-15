@@ -6,7 +6,11 @@ const dotenv = require("dotenv");
 const validator = require("validator");
 dotenv.config({ path: ".././src/config/config.env" });
 const userSchema = new Schema({
-  name: {
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
     type: String,
     required: true,
   },
@@ -27,22 +31,8 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ["user", "admin"],
+    enum: ["user", "admin", "moderator"],
     default: "user",
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
-  emailVerified: {
-    type: Boolean,
-    default: false,
-  },
-  emailVerificationToken: {
-    type: Number,
-  },
-  emailVerificationTokenExpires: {
-    type: Date,
   },
   passwordResetToken: {
     type: Number,
@@ -56,6 +46,31 @@ const userSchema = new Schema({
   isActive: {
     type: Boolean,
     default: true,
+  },
+  permissions: {
+    type: [String],
+  },
+  phone: {
+    number: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      enum: ["cell", "home", "work"],
+    },
+  },
+  profilePicture: {
+    type: String,
+    default: null,
+  },
+  notificationEmail: {
+    type: String,
+    default: null,
+  },
+  company: {
+    type: String,
+    default: null,
   },
 });
 

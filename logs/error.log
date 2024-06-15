@@ -1,0 +1,18 @@
+{"date":"2024-06-14T23:32:25.954Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:32:42.200Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:32:46.039Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:32:53.757Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:33:53.641Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:34:01.157Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:35:18.339Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:35:21.758Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:37:03.894Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-14T23:47:05.780Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T00:09:13.799Z","level":"error","message":"E11000 duplicate key error collection: urbansoap-be.users index: email_1 dup key: { email: \"admin@rocket.com\" }","method":"POST","service":"user-service","url":"/register"}
+{"date":"2024-06-15T00:09:51.344Z","level":"error","message":"E11000 duplicate key error collection: urbansoap-be.users index: email_1 dup key: { email: \"admin@rocket.com\" }","method":"POST","service":"user-service","url":"/register"}
+{"date":"2024-06-15T00:10:06.376Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T00:22:19.122Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T00:22:22.602Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T03:11:05.400Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T04:22:07.988Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-15T04:22:37.118Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}

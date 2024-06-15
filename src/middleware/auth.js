@@ -18,4 +18,25 @@ const isAuthenticated = async (req, res, next) => {
   }
 };
 
-module.exports = isAuthenticated;
+const isAdmin = async (req, res, next) => {
+  if (req.user.role !== "admin") {
+    return res.status(403).json({ success: false, message: "Forbidden" });
+  }
+  next();
+}
+
+const isModerator = async (req, res, next) => {
+  if (req.user.role !== "moderator") {
+    return res.status(403).json({ success: false, message: "Forbidden" });
+  }
+  next();
+}
+
+const isUser = async (req, res, next) => {
+  if (req.user.role !== "user") {
+    return res.status(403).json({ success: false, message: "Forbidden" });
+  }
+  next();
+}
+
+module.exports = {isAuthenticated, isAdmin, isModerator, isUser};

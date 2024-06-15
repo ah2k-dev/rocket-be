@@ -17,45 +17,6 @@
     "application/json"
   ],
   "paths": {
-    "/auth/logout": {
-      "get": {
-        "tags": [
-          "auth"
-        ],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/auth/register": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
     "/auth/login": {
       "post": {
         "tags": [
@@ -82,7 +43,7 @@
         "responses": {}
       }
     },
-    "/auth/requestEmailToken": {
+    "/auth/forgotPassword": {
       "post": {
         "tags": [
           "auth"
@@ -105,56 +66,13 @@
         "responses": {}
       }
     },
-    "/auth/verifyEmail": {
+    "/auth/register": {
       "post": {
         "tags": [
           "auth"
         ],
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "emailVerificationToken": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          }
-        }
-      }
-    },
-    "/auth/forgotPassword": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {}
       }
     },
