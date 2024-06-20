@@ -17,3 +17,21 @@
 {"date":"2024-06-15T04:22:07.988Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
 {"date":"2024-06-15T04:22:37.118Z","level":"error","message":"User does not exist","method":"POST","service":"user-service","url":"/login"}
 {"date":"2024-06-20T13:22:37.955Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-06-20T15:15:30.256Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:16:31.735Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:18:41.213Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:19:43.856Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:22:35.111Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:24:25.466Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:25:09.337Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:26:17.150Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:28:15.831Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:30:08.913Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:31:02.292Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:31:27.832Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"sd@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:32:59.917Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:36:46.176Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"kjkj@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:38:18.221Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:40:50.340Z","level":"error","message":"user validation failed: role: `manager` is not a valid enum value for path `role`.","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T19:52:59.082Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}
+{"date":"2024-06-20T19:53:02.284Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}

@@ -213,3 +213,71 @@
 {"date":"2024-06-20T14:47:19.902Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
 {"date":"2024-06-20T14:47:47.749Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
 {"date":"2024-06-20T14:48:09.804Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-06-20T14:51:51.875Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-06-20T15:05:09.541Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:05:17.132Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/"}
+{"date":"2024-06-20T15:05:17.195Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui.css"}
+{"date":"2024-06-20T15:05:17.207Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-bundle.js"}
+{"date":"2024-06-20T15:05:17.209Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-standalone-preset.js"}
+{"date":"2024-06-20T15:05:17.215Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-init.js"}
+{"date":"2024-06-20T15:05:18.219Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-20T15:07:12.143Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:14:49.290Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:15:29.606Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:15:30.256Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:16:31.166Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:16:31.735Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:18:40.637Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:18:41.213Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:19:43.279Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:19:43.856Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:22:34.466Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:22:35.111Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:24:24.884Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:24:25.466Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:25:08.775Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:25:09.337Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:26:16.589Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:26:17.150Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:28:15.217Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:28:15.831Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:30:08.331Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:30:08.913Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:31:01.672Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:31:02.292Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:31:27.276Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:31:27.832Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"sd@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:32:00.821Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/"}
+{"date":"2024-06-20T15:32:00.885Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui.css"}
+{"date":"2024-06-20T15:32:00.889Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-bundle.js"}
+{"date":"2024-06-20T15:32:00.894Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-standalone-preset.js"}
+{"date":"2024-06-20T15:32:00.895Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-init.js"}
+{"date":"2024-06-20T15:32:01.815Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-20T15:32:59.336Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:32:59.917Z","level":"error","message":"user.getJwtToken is not a function","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:36:44.448Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:36:46.176Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"kjkj@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:38:17.669Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:38:18.221Z","level":"error","message":"E11000 duplicate key error collection: rocket-be.users index: email_1 dup key: { email: \"ali@gmail.com\" }","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:39:03.526Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:40:50.116Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:40:50.340Z","level":"error","message":"user validation failed: role: `manager` is not a valid enum value for path `role`.","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-06-20T15:41:31.614Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-06-20T15:53:12.737Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T15:53:28.488Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T15:54:41.673Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T15:54:51.157Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T16:30:49.554Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/jobs?sort=desc&page=1&limit=10&search=&status=open"}
+{"date":"2024-06-20T16:30:49.743Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/uploads/1718284268807-Screenshot%20from%202024-06-10%2020-15-23.png"}
+{"date":"2024-06-20T19:22:50.061Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-06-20T19:23:50.775Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T19:42:10.946Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T19:52:58.851Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/admin/updateUser/undefined"}
+{"date":"2024-06-20T19:52:59.082Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}
+{"date":"2024-06-20T19:53:02.055Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/admin/updateUser/undefined"}
+{"date":"2024-06-20T19:53:02.284Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}
+{"date":"2024-06-20T19:57:19.560Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T19:59:21.909Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T19:59:26.385Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T20:01:41.822Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers"}
+{"date":"2024-06-20T20:18:35.930Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}

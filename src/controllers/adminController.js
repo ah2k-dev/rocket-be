@@ -41,12 +41,12 @@ const updateProfile = async (req, res) => {
 const createUser = async (req, res) => {
   // #swagger.tags = ['admin']
   try {
-    const { firstName, lastName, comapny, phone, email, role } = req.body;
+    const { firstName, lastName, company, phone, email, role } = req.body;
 
     const user = await User.create({
       firstName,
       lastName,
-      comapny,
+      company,
       phone: {
         number: phone,
         type: "cell",
@@ -57,7 +57,7 @@ const createUser = async (req, res) => {
       permissions: req.body.permissions || [],
     });
 
-    const token = await user.getJwtToken();
+    const token = await user.getJWTToken();
 
     SuccessHandler(
       {
