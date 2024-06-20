@@ -6,18 +6,14 @@ const router = express.Router();
 
 //put
 router.route("/updateProfile").put(admin.updateProfile);
-router.route("/updateUser/:id").put(isAuthenticated, isAdmin, admin.updateUser);
-router
-  .route("/activateDeactivateUser/:id")
-  .put(isAuthenticated, isAdmin, admin.activateDeactivateUser);
+router.route("/updateUser/:id").put(admin.updateUser);
+router.route("/activateDeactivateUser/:id").put(admin.activateDeactivateUser);
 //post
-router.route("/createUser").post(isAuthenticated, isAdmin, admin.createUser);
+router.route("/createUser").post(admin.createUser);
 //get
-router.route("/getUsers").get(isAuthenticated, isAdmin, admin.getUsers);
-router.route("/getUser/:id").get(isAuthenticated, isAdmin, admin.getUser);
+router.route("/getUsers").get(admin.getUsers);
+router.route("/getUser/:id").get(admin.getUser);
 //delete
-router
-  .route("/deleteUser/:id")
-  .delete(isAuthenticated, isAdmin, admin.deleteUser);
+router.route("/deleteUser/:id").delete(admin.deleteUser);
 
 module.exports = router;

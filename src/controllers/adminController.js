@@ -54,6 +54,7 @@ const createUser = async (req, res) => {
       email,
       password: "newRocketuser12345678",
       role,
+      permissions: req.body.permissions || [],
     });
 
     const token = await user.getJwtToken();
@@ -161,6 +162,7 @@ const deleteUser = async (req, res) => {
     return ErrorHandler(error.message, 500, req, res);
   }
 };
+
 
 const activateDeactivateUser = async (req, res) => {
   // #swagger.tags = ['admin']
