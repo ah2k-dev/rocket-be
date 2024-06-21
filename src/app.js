@@ -7,6 +7,7 @@ const router = require("./router");
 const loggerMiddleware = require("./middleware/loggerMiddleware");
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("../swagger_output.json"); // Generated Swagger file
+const sendMail = require("./utils/sendMail");
 
 // Middlewares
 app.use(express.json());
@@ -21,7 +22,9 @@ app.use("/", router);
 // api doc
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
+  // await sendMail("zubarif234@gmail.com", "Test", "Test message")
+  console.log("Mail sent")
   res.send("BE-boilerplate v1.1");
 });
 

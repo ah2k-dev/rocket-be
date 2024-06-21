@@ -35,3 +35,9 @@
 {"date":"2024-06-20T15:40:50.340Z","level":"error","message":"user validation failed: role: `manager` is not a valid enum value for path `role`.","method":"POST","service":"user-service","url":"/createUser"}
 {"date":"2024-06-20T19:52:59.082Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}
 {"date":"2024-06-20T19:53:02.284Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/undefined"}
+{"date":"2024-06-21T13:26:59.298Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}
+{"date":"2024-06-21T13:27:01.023Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}
+{"date":"2024-06-21T13:27:01.430Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}
+{"date":"2024-06-21T13:27:01.774Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}
+{"date":"2024-06-21T13:27:02.963Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}
+{"date":"2024-06-21T13:27:05.286Z","level":"error","message":"Email and password cannot be updated here","method":"PUT","service":"user-service","url":"/updateUser/6674cae10f2ecb2e9d25bc9d"}

@@ -70,11 +70,11 @@ const createUser = async (req, res) => {
     );
 
     // send email to user with create password link
-    // await sendMail(
-    //   email,
-    //   "Create password",
-    //   `Click the link to create password: ${req.headers["origin"]}/create-password/user/${token}`
-    // );
+    await sendMail(
+      email,
+      "Create password",
+      `Click the link to create password: ${req.headers["origin"]}/create-password/${token}`
+    );
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }
