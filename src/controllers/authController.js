@@ -13,7 +13,7 @@ const login = async (req, res) => {
     if (!user) {
       return ErrorHandler("User does not exist", 400, req, res);
     }
-    if(!user.isActive){
+    if (!user.isActive) {
       return ErrorHandler("User is not active", 400, req, res);
     }
     const isMatch = await user.comparePassword(password);
@@ -113,6 +113,26 @@ const updatePassword = async (req, res) => {
   }
 };
 
+//create password
+const createPassword = async (req, res) => {
+  // #swagger.tags = ['auth']
+
+  try {
+    const { password } = req.body;
+    const user = await User.findById(req.user._id).select("+password");
+    // if (user.password) {
+    //   return ErrorHandler("Password already exists", 400, req, res);
+    // }
+
+    user.password = password;
+
+    await user.save();
+    return SuccessHandler("Password created successfully", 200, res);
+  } catch (error) {
+    return ErrorHandler(error.message, 500, req, res);
+  }
+};
+
 //me
 const me = async (req, res) => {
   // #swagger.tags = ['auth']
@@ -129,5 +149,6 @@ module.exports = {
   forgotPassword,
   resetPassword,
   updatePassword,
+  createPassword,
   me,
 };

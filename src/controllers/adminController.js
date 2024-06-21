@@ -2,6 +2,7 @@ const SuccessHandler = require("../utils/SuccessHandler");
 const ErrorHandler = require("../utils/ErrorHandler");
 const User = require("../models/User/user");
 const sendMail = require("../utils/sendMail");
+const { options } = require("../router");
 
 // settings
 const updateProfile = async (req, res) => {
@@ -62,7 +63,7 @@ const createUser = async (req, res) => {
     SuccessHandler(
       {
         user,
-        createPasswordLink: `${req.headers["origin"]}/create-password/user/${token}`, // remove from production
+        // createPasswordLink: `${req.headers["origin"]}/create-password/user/${token}`, // remove from production
         message: "User created successfully",
       },
       201,
@@ -87,9 +88,14 @@ const getUsers = async (req, res) => {
       req.query.search && req.query.search.length > 0
         ? {
             $or: [
-              { firstName: req.query.search },
-              { lastName: req.query.search },
-              { email: req.query.search },
+              {
+                firstName: {
+                  $regex: req.query.search,
+                  $options: "i",
+                },
+              },
+              { lastName: { $regex: req.query.search, $options: "i" } },
+              { email: { $regex: req.query.search, $options: "i" } },
             ],
           }
         : {};
@@ -98,12 +104,33 @@ const getUsers = async (req, res) => {
       req.query.role && req.query.role.length > 0
         ? { role: req.query.role }
         : {};
+
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
     const users = await User.find({
       ...searchFilter,
       ...roleFilter,
-    }).select("-password");
+    })
+      .select("-password")
+      .skip(skip)
+      .limit(limit);
 
-    return SuccessHandler(users, 200, res);
+    const totalUsers = await User.countDocuments({
+      ...searchFilter,
+      ...roleFilter,
+    });
+
+    return SuccessHandler(
+      {
+        users,
+        totalUsers,
+        page,
+        limit,
+      },
+      200,
+      res
+    );
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }
@@ -162,7 +189,6 @@ const deleteUser = async (req, res) => {
     return ErrorHandler(error.message, 500, req, res);
   }
 };
-
 
 const activateDeactivateUser = async (req, res) => {
   // #swagger.tags = ['admin']
