@@ -16,6 +16,17 @@ const snsSchema = new Schema(
       type: Object,
       required: true,
     },
+    status: {
+      type: String,
+      default: "pending",
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+    report: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

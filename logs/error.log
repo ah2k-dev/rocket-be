@@ -51,3 +51,4 @@
 {"date":"2024-06-21T19:24:55.683Z","level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"user\"","method":"DELETE","service":"user-service","url":"/deleteUser/undefined"}
 {"date":"2024-06-21T19:25:00.178Z","level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"user\"","method":"DELETE","service":"user-service","url":"/deleteUser/undefined"}
 {"date":"2024-06-21T19:25:15.600Z","level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"user\"","method":"DELETE","service":"user-service","url":"/deleteUser/undefined"}
+{"date":"2024-06-24T15:40:29.422Z","level":"error","message":"Please provide question and answer","method":"PUT","service":"user-service","url":"/updateFaq/66797da5d64608cfa18d67fc"}
