@@ -213,6 +213,8 @@ const getCkmbgRequests = async (req, res) => {
         ? {}
         : { user: req.user._id };
 
+    console.log(roleFilter, searchFilter, typeFilter);
+
     const requests = await Ckmbg.aggregate([
       {
         $match: {

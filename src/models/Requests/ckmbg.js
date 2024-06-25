@@ -23,6 +23,10 @@ const ckmbgSchema = new Schema(
     report: {
       type: String,
     },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
   },
   { timestamps: true }
 );
