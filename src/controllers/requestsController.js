@@ -77,6 +77,10 @@ const getCompletedRequests = async (req, res) => {
         ? {}
         : { user: req.user._id };
 
+    // const page = parseInt(req.query.page) || 1;
+    // const limit = parseInt(req.query.limit) || 10;
+    // const skip = (page - 1) * limit;
+
     let requests = [];
 
     if (type.includes("sns")) {
@@ -85,7 +89,7 @@ const getCompletedRequests = async (req, res) => {
           $match: {
             ...typeFilter,
             ...roleFilter,
-            isActive: false,
+            isActive: true,
           },
         },
         {
@@ -102,6 +106,13 @@ const getCompletedRequests = async (req, res) => {
             ...searchFilter,
           },
         },
+        // {
+        //   $facet: {
+        //     data: [{ $skip: skip }, { $limit: limit }],
+        //     total: [{ $count: "total" }],
+        //   },
+        // },
+
       ]);
 
       requests = requests.concat(snsReqs);
@@ -162,6 +173,11 @@ const getSnsRequests = async (req, res) => {
         ? {}
         : { user: req.user._id };
 
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+
     const requests = await Sns.aggregate([
       {
         $match: {
@@ -182,6 +198,12 @@ const getSnsRequests = async (req, res) => {
       {
         $match: {
           ...searchFilter,
+        },
+      },
+      {
+        $facet: {
+          data: [{ $skip: skip }, { $limit: limit }],
+          total: [{ $count: "total" }],
         },
       },
     ]);
@@ -213,7 +235,9 @@ const getCkmbgRequests = async (req, res) => {
         ? {}
         : { user: req.user._id };
 
-    console.log(roleFilter, searchFilter, typeFilter);
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
 
     const requests = await Ckmbg.aggregate([
       {
@@ -235,6 +259,12 @@ const getCkmbgRequests = async (req, res) => {
       {
         $match: {
           ...searchFilter,
+        },
+      },
+      {
+        $facet: {
+          data: [{ $skip: skip }, { $limit: limit }],
+          total: [{ $count: "total" }],
         },
       },
     ]);

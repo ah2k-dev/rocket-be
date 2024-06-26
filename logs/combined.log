@@ -1635,3 +1635,16 @@
 {"date":"2024-06-25T14:13:22.729Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCkmbgRequests"}
 {"date":"2024-06-25T14:13:54.223Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCkmbgRequests"}
 {"date":"2024-06-25T14:14:23.231Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCkmbgRequests?search=user"}
+{"date":"2024-06-26T06:28:35.237Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/"}
+{"date":"2024-06-26T06:28:35.327Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui.css"}
+{"date":"2024-06-26T06:28:35.342Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-bundle.js"}
+{"date":"2024-06-26T06:28:35.352Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-standalone-preset.js"}
+{"date":"2024-06-26T06:28:35.354Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-init.js"}
+{"date":"2024-06-26T06:28:36.052Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-26T06:28:36.837Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-26T06:29:16.337Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests"}
+{"date":"2024-06-26T06:29:17.785Z","level":"error","message":"Cannot read properties of undefined (reading 'includes')","method":"GET","service":"user-service","url":"/getCompletedRequests"}
+{"date":"2024-06-26T06:29:31.523Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%5D"}
+{"date":"2024-06-26T06:29:44.264Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
+{"date":"2024-06-26T06:30:08.719Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
+{"date":"2024-06-26T06:30:51.168Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
