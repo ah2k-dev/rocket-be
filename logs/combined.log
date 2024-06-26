@@ -1648,3 +1648,10 @@
 {"date":"2024-06-26T06:29:44.264Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
 {"date":"2024-06-26T06:30:08.719Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
 {"date":"2024-06-26T06:30:51.168Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?type=%5B%22sns%22%2C%20%22ckmbg%22%5D"}
+{"date":"2024-06-26T11:33:50.960Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/"}
+{"date":"2024-06-26T11:33:51.036Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui.css"}
+{"date":"2024-06-26T11:33:51.042Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-bundle.js"}
+{"date":"2024-06-26T11:33:51.045Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-standalone-preset.js"}
+{"date":"2024-06-26T11:33:51.058Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-init.js"}
+{"date":"2024-06-26T11:33:51.521Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-26T11:33:52.405Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}

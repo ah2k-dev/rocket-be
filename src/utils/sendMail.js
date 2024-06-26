@@ -13,7 +13,7 @@ const sendMail = async (email, subject, text) => {
     })
   );
   await transport.sendMail({
-    from: "ah2k.dev@gmail.com",
+    from: "developer@dotclickllc.com",
     to: email,
     subject,
     text,

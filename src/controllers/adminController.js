@@ -3,6 +3,8 @@ const ErrorHandler = require("../utils/ErrorHandler");
 const User = require("../models/User/user");
 const sendMail = require("../utils/sendMail");
 const { options } = require("../router");
+const Sns = require("../models/Requests/sns");
+const Ckmbg = require("../models/Requests/ckmbg");
 
 // settings
 const updateProfile = async (req, res) => {
@@ -215,6 +217,118 @@ const activateDeactivateUser = async (req, res) => {
   }
 };
 
+const dashboardStats = async (req, res) => {
+  // #swagger.tags = ['admin']
+  try {
+    const totalUsers = await User.countDocuments({
+      isActive: true,
+      role: "user",
+    });
+
+    const totalModerators = await User.countDocuments({
+      isActive: true,
+      role: "moderator",
+    });
+
+    const totalSnsRequests = await Sns.countDocuments({
+      isActive: true,
+    });
+
+    const totalCkmbgRequests = await Ckmbg.countDocuments({
+      isActive: true,
+    });
+
+    return SuccessHandler(
+      {
+        totalUsers,
+        totalModerators,
+        totalSnsRequests,
+        totalCkmbgRequests,
+      },
+      200,
+      res
+    );
+  } catch (error) {
+    return ErrorHandler(error.message, 500, req, res);
+  }
+};
+
+const dashboardCharts = async (req, res) => {
+  // #swagger.tags = ['admin']
+  try {
+    const yearFilter = req.query.year
+      ? {
+          createdAt: {
+            $gte: new Date(`${req.query.year}-01-01`),
+            $lt: new Date(`${req.query.year}-12-31`),
+          },
+        }
+      : {
+          createdAt: {
+            $gte: new Date(`${new Date().getFullYear()}-01-01`),
+            $lt: new Date(`${new Date().getFullYear()}-12-31`),
+          },
+        };
+
+    const months = [
+      { month: "January", total: 0 },
+      { month: "February", total: 0 },
+      { month: "March", total: 0 },
+      { month: "April", total: 0 },
+      { month: "May", total: 0 },
+      { month: "June", total: 0 },
+      { month: "July", total: 0 },
+      { month: "August", total: 0 },
+      { month: "September", total: 0 },
+      { month: "October", total: 0 },
+      { month: "November", total: 0 },
+      { month: "December", total: 0 },
+    ];
+
+    const snsRequests = await Sns.aggregate([
+      {
+        $match: {
+          ...yearFilter,
+          isActive: true,
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$createdAt" },
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+
+    const ckmbgRequests = await Ckmbg.aggregate([
+      {
+        $match: {
+          ...yearFilter,
+          isActive: true,
+        },
+      },
+      {
+        $group: {
+          _id: { $month: "$createdAt" },
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+
+    snsRequests.forEach((request) => {
+      months[request._id - 1].total = request.total;
+    });
+
+    ckmbgRequests.forEach((request) => {
+      months[request._id - 1].total = request.total;
+    });
+
+    return SuccessHandler(months, 200, res);
+  } catch (error) {
+    return ErrorHandler(error.message, 500, req, res);
+  }
+};
+
 module.exports = {
   updateProfile,
   createUser,
@@ -223,4 +337,6 @@ module.exports = {
   updateUser,
   deleteUser,
   activateDeactivateUser,
+  dashboardStats,
+  dashboardCharts,
 };

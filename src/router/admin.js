@@ -13,6 +13,8 @@ router.route("/createUser").post(admin.createUser);
 //get
 router.route("/getUsers").get(admin.getUsers);
 router.route("/getUser/:id").get(admin.getUser);
+router.route("/dashboardStats").get(admin.dashboardStats);
+router.route("/dashboardCharts").get(admin.dashboardCharts);
 //delete
 router.route("/deleteUser/:id").delete(admin.deleteUser);
 

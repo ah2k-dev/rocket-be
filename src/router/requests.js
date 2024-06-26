@@ -9,7 +9,7 @@ router.route("/createCkmpgRequest").post(isUser, requests.createCkmbgRequest);
 router.route("/getCompletedRequests").get(requests.getCompletedRequests);
 router.route("/getSnsRequests").get(requests.getSnsRequests);
 router.route("/getCkmpgRequests").get(requests.getCkmbgRequests);
-router.route("/getRequests").get(requests.getSingleRequest);
+router.route("/getRequest/:id").get(requests.getSingleRequest);
 
 router.route("/status/:id").put(isAdmin, requests.updateStatus);
 
