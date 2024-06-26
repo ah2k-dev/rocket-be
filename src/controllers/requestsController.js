@@ -3,6 +3,7 @@ const ErrorHandler = require("../utils/ErrorHandler");
 const Sns = require("../models/Requests/sns");
 const Ckmbg = require("../models/Requests/ckmbg");
 const { path } = require("../app");
+const Activity = require("../models/User/activities");
 
 const createSnsRequest = async (req, res) => {
   // #swagger.tags = ['requests']
@@ -23,7 +24,12 @@ const createSnsRequest = async (req, res) => {
     });
     await sns.save();
 
-    return SuccessHandler("Request created successfully", 201, res);
+    SuccessHandler("Request created successfully", 201, res);
+
+    await Activity.create({
+      user: req.user._id,
+      activity: `Created a new request for ${type}`,
+    });
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }
@@ -48,7 +54,11 @@ const createCkmbgRequest = async (req, res) => {
     });
     await ckmBg.save();
 
-    return SuccessHandler("Request created successfully", 201, res);
+    SuccessHandler("Request created successfully", 201, res);
+    await Activity.create({
+      user: req.user._id,
+      activity: `Created a new request for ${type}`,
+    });
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }
@@ -112,7 +122,6 @@ const getCompletedRequests = async (req, res) => {
         //     total: [{ $count: "total" }],
         //   },
         // },
-
       ]);
 
       requests = requests.concat(snsReqs);
@@ -176,7 +185,6 @@ const getSnsRequests = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
-
 
     const requests = await Sns.aggregate([
       {
@@ -326,7 +334,12 @@ const updateStatus = async (req, res) => {
       );
     }
 
-    return SuccessHandler(request, 200, res);
+    SuccessHandler(request, 200, res);
+
+    await Activity.create({
+      user: req.user._id,
+      activity: `${req.user.firstName} updated request status to ${status}`,
+    });
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }

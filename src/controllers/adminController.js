@@ -5,6 +5,7 @@ const sendMail = require("../utils/sendMail");
 const { options } = require("../router");
 const Sns = require("../models/Requests/sns");
 const Ckmbg = require("../models/Requests/ckmbg");
+const Activity = require("../models/User/activities");
 
 // settings
 const updateProfile = async (req, res) => {
@@ -329,6 +330,20 @@ const dashboardCharts = async (req, res) => {
   }
 };
 
+const dashboardActivities = async (req, res) => {
+  // #swagger.tags = ['admin']
+  try {
+    const latestActivities = await Activity.find()
+      .populate("user")
+      .sort({ createdAt: -1 })
+      .limit(10);
+
+    return SuccessHandler(latestActivities, 200, res);
+  } catch (error) {
+    return ErrorHandler(error.message, 500, req, res);
+  }
+};
+
 module.exports = {
   updateProfile,
   createUser,
@@ -339,4 +354,5 @@ module.exports = {
   activateDeactivateUser,
   dashboardStats,
   dashboardCharts,
+  dashboardActivities,
 };

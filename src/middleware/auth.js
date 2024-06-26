@@ -13,7 +13,9 @@ const isAuthenticated = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = await User.findById(decoded._id);
     if (!req.user) {
-      return res.status(404).json({ success: false, message: "User not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
     }
     next();
   } catch (error) {
@@ -26,20 +28,20 @@ const isAdmin = async (req, res, next) => {
     return res.status(403).json({ success: false, message: "Forbidden" });
   }
   next();
-}
+};
 
-const isModerator = async (req, res, next) => {
-  if (req.user.role !== "moderator") {
+const isAdminOrModerator = async (req, res, next) => {
+  if (req.user.role !== "moderator" || req.user.role !== "admin") {
     return res.status(403).json({ success: false, message: "Forbidden" });
   }
   next();
-}
+};
 
 const isUser = async (req, res, next) => {
   if (req.user.role !== "user") {
     return res.status(403).json({ success: false, message: "Forbidden" });
   }
   next();
-}
+};
 
-module.exports = {isAuthenticated, isAdmin, isModerator, isUser};
+module.exports = { isAuthenticated, isAdmin, isAdminOrModerator, isUser };
