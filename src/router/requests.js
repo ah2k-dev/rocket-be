@@ -11,6 +11,6 @@ router.route("/getSnsRequests").get(requests.getSnsRequests);
 router.route("/getCkmpgRequests").get(requests.getCkmbgRequests);
 router.route("/getRequest/:id").get(requests.getSingleRequest);
 
-router.route("/status/:id").put(isAdminOrModerator, requests.updateStatus);
+router.route("/status/:id").put( requests.updateStatus);
 
 module.exports = router;
