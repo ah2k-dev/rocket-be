@@ -7,7 +7,7 @@ const router = require("express").Router();
 
 router.use("/auth", auth);
 router.use("/requests", isAuthenticated, requests);
-router.use("/admin", isAuthenticated, isAdminOrModerator, admin);
+router.use("/admin", isAuthenticated, admin);
 router.use("/faqs", faqs);
 
 module.exports = router;
