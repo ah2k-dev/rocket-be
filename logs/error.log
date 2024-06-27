@@ -54,3 +54,9 @@
 {"date":"2024-06-24T15:40:29.422Z","level":"error","message":"Please provide question and answer","method":"PUT","service":"user-service","url":"/updateFaq/66797da5d64608cfa18d67fc"}
 {"date":"2024-06-25T14:07:48.168Z","level":"error","message":"Cannot read properties of null (reading 'role')","method":"GET","service":"user-service","url":"/getCkmbgRequests"}
 {"date":"2024-06-26T06:29:17.785Z","level":"error","message":"Cannot read properties of undefined (reading 'includes')","method":"GET","service":"user-service","url":"/getCompletedRequests"}
+{"date":"2024-06-27T15:07:17.927Z","level":"error","message":"path.join is not a function","method":"PUT","service":"user-service","url":"/status/667b3102053c9ba6cc807d0b"}
+{"date":"2024-06-27T15:07:37.961Z","level":"error","message":"path.join is not a function","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:21.280Z","level":"error","message":"Error uploading file","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:21.530Z","level":"error","message":"Cannot set headers after they are sent to the client","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:47.918Z","level":"error","message":"Error uploading file","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:48.137Z","level":"error","message":"Cannot set headers after they are sent to the client","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}

@@ -1655,3 +1655,23 @@
 {"date":"2024-06-26T11:33:51.058Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/swagger-ui-init.js"}
 {"date":"2024-06-26T11:33:51.521Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
 {"date":"2024-06-26T11:33:52.405Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/api-docs/favicon-32x32.png"}
+{"date":"2024-06-27T15:07:07.817Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCkmpgRequests?limit=10"}
+{"date":"2024-06-27T15:07:17.017Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667b3102053c9ba6cc807d0b"}
+{"date":"2024-06-27T15:07:17.927Z","level":"error","message":"path.join is not a function","method":"PUT","service":"user-service","url":"/status/667b3102053c9ba6cc807d0b"}
+{"date":"2024-06-27T15:07:26.821Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:07:27.409Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCkmpgRequests?limit=10"}
+{"date":"2024-06-27T15:07:34.649Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:07:37.961Z","level":"error","message":"path.join is not a function","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:19.446Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:21.280Z","level":"error","message":"Error uploading file","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:21.530Z","level":"error","message":"Cannot set headers after they are sent to the client","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:46.063Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:47.918Z","level":"error","message":"Error uploading file","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:08:48.137Z","level":"error","message":"Cannot set headers after they are sent to the client","method":"PUT","service":"user-service","url":"/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:09:51.851Z","level":"info","message":"Request received","method":"PUT","service":"user-service","url":"/requests/status/667ad55a053c9ba6cc807c13"}
+{"date":"2024-06-27T15:33:48.808Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmpg%22]"}
+{"date":"2024-06-27T15:34:31.938Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmbg%22]"}
+{"date":"2024-06-27T15:34:34.386Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmbg%22]"}
+{"date":"2024-06-27T15:36:41.278Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmbg%22]"}
+{"date":"2024-06-27T15:37:24.068Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmbg%22]"}
+{"date":"2024-06-27T15:37:57.697Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getCompletedRequests?search=&type=[%22sns%22,%22ckmbg%22]"}

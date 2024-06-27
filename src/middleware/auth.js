@@ -31,7 +31,7 @@ const isAdmin = async (req, res, next) => {
 };
 
 const isAdminOrModerator = async (req, res, next) => {
-  if (req.user.role !== "moderator" || req.user.role !== "admin") {
+  if (req.user.role !== "moderator" && req.user.role !== "admin") {
     return res.status(403).json({ success: false, message: "Forbidden" });
   }
   next();

@@ -15,6 +15,7 @@ router.route("/getUsers").get(admin.getUsers);
 router.route("/getUser/:id").get(admin.getUser);
 router.route("/dashboardStats").get(admin.dashboardStats);
 router.route("/dashboardCharts").get(admin.dashboardCharts);
+router.route("/dashboardActivities").get(admin.dashboardActivities);
 //delete
 router.route("/deleteUser/:id").delete(admin.deleteUser);
 

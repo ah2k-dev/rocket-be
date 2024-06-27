@@ -2,8 +2,8 @@ const SuccessHandler = require("../utils/SuccessHandler");
 const ErrorHandler = require("../utils/ErrorHandler");
 const Sns = require("../models/Requests/sns");
 const Ckmbg = require("../models/Requests/ckmbg");
-const { path } = require("../app");
 const Activity = require("../models/User/activities");
+const path = require("path");
 
 const createSnsRequest = async (req, res) => {
   // #swagger.tags = ['requests']
@@ -67,7 +67,7 @@ const createCkmbgRequest = async (req, res) => {
 const getCompletedRequests = async (req, res) => {
   // #swagger.tags = ['requests']
   try {
-    const searchFilter = req.query.search
+    const searchFilter = req.query.search && req.query.search !== ""
       ? {
           $or: [
             { "user.firstName": { $regex: req.query.search, $options: "i" } },
@@ -91,6 +91,8 @@ const getCompletedRequests = async (req, res) => {
     // const limit = parseInt(req.query.limit) || 10;
     // const skip = (page - 1) * limit;
 
+    console.log(roleFilter, searchFilter, typeFilter);
+
     let requests = [];
 
     if (type.includes("sns")) {
@@ -100,6 +102,7 @@ const getCompletedRequests = async (req, res) => {
             ...typeFilter,
             ...roleFilter,
             isActive: true,
+            status: "completed",
           },
         },
         {
@@ -133,7 +136,8 @@ const getCompletedRequests = async (req, res) => {
           $match: {
             ...typeFilter,
             ...roleFilter,
-            isActive: false,
+            isActive: true,
+            status: "completed",
           },
         },
         {
@@ -297,16 +301,17 @@ const updateStatus = async (req, res) => {
     let reportLink = null;
     if (req.files?.report) {
       const reportFile = req.files.report;
-      const path = `${reportFile.name}-${Date.now()}`;
+      const pathD = `${reportFile.name}-${Date.now()}`;
       await reportFile.mv(
-        path.join(__dirname, "../../uploads", path),
+        path.join(__dirname, "../../uploads", pathD),
         (err) => {
           if (err) {
+            console.error(err);
             return ErrorHandler("Error uploading file", 500, req, res);
           }
         }
       );
-      reportLink = `/uploads/${path}`;
+      reportLink = `/uploads/${pathD}`;
     }
 
     let request;
