@@ -9,6 +9,7 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("../swagger_output.json"); // Generated Swagger file
 const sendMail = require("./utils/sendMail");
 const fileUpload = require("express-fileupload");
+const path = require("path");
 
 // Middlewares
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(fileUpload());
 
 // router index
 app.use("/", router);
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 // api doc
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
