@@ -67,16 +67,17 @@ const createCkmbgRequest = async (req, res) => {
 const getCompletedRequests = async (req, res) => {
   // #swagger.tags = ['requests']
   try {
-    const searchFilter = req.query.search && req.query.search !== ""
-      ? {
-          $or: [
-            { "user.firstName": { $regex: req.query.search, $options: "i" } },
-            { "user.lastName": { $regex: req.query.search, $options: "i" } },
-            { "user.email": { $regex: req.query.search, $options: "i" } },
-            { "user.phone": { $regex: req.query.search, $options: "i" } },
-          ],
-        }
-      : {};
+    const searchFilter =
+      req.query.search && req.query.search !== ""
+        ? {
+            $or: [
+              { "user.firstName": { $regex: req.query.search, $options: "i" } },
+              { "user.lastName": { $regex: req.query.search, $options: "i" } },
+              { "user.email": { $regex: req.query.search, $options: "i" } },
+              { "user.phone": { $regex: req.query.search, $options: "i" } },
+            ],
+          }
+        : {};
 
     const typeFilter = req.query.subType ? { type: req.query.subType } : {};
 
@@ -369,6 +370,26 @@ const getSingleRequest = async (req, res) => {
   }
 };
 
+const getAllRequests = async (req, res) => {
+  // #swagger.tags = ['requests']
+  try {
+    const statusFilter = req.query.status ? { status: req.query.status } : {};
+
+    const snsRequests = await Sns.find({
+      ...statusFilter,
+      isActive: true,
+    });
+    const ckmbgRequests = await Ckmbg.find({
+      ...statusFilter,
+      isActive: true,
+    });
+
+    return SuccessHandler({ snsRequests, ckmbgRequests }, 200, res);
+  } catch (error) {
+    return ErrorHandler(error.message, 500, req, res);
+  }
+};
+
 module.exports = {
   createSnsRequest,
   createCkmbgRequest,
@@ -377,4 +398,5 @@ module.exports = {
   getCkmbgRequests,
   updateStatus,
   getSingleRequest,
+  getAllRequests,
 };

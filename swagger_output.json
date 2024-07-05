@@ -453,6 +453,37 @@
         }
       }
     },
+    "/requests/getRequests": {
+      "get": {
+        "tags": [
+          "requests"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/requests/status/{id}": {
       "put": {
         "tags": [
@@ -865,6 +896,32 @@
             "required": true,
             "type": "string"
           },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/uploader/": {
+      "post": {
+        "tags": [
+          "requests"
+        ],
+        "description": "",
+        "parameters": [
           {
             "name": "authorization",
             "in": "header",

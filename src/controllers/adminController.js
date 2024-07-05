@@ -324,7 +324,37 @@ const dashboardCharts = async (req, res) => {
       months[request._id - 1].total = request.total;
     });
 
-    return SuccessHandler(months, 200, res);
+    const availableYearsSns = await Sns.aggregate([
+      {
+        $group: {
+          _id: { $year: "$createdAt" },
+        },
+      },
+    ]);
+
+    const availableYearsCkmbg = await Ckmbg.aggregate([
+      {
+        $group: {
+          _id: { $year: "$createdAt" },
+        },
+      },
+    ]);
+
+    const availableYears = [
+      ...new Set([
+        ...availableYearsSns.map((year) => year._id),
+        ...availableYearsCkmbg.map((year) => year._id),
+      ]),
+    ];
+
+    return SuccessHandler(
+      {
+        months,
+        availableYears,
+      },
+      200,
+      res
+    );
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
   }

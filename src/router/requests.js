@@ -10,6 +10,7 @@ router.route("/getCompletedRequests").get(requests.getCompletedRequests);
 router.route("/getSnsRequests").get(requests.getSnsRequests);
 router.route("/getCkmpgRequests").get(requests.getCkmbgRequests);
 router.route("/getRequest/:id").get(requests.getSingleRequest);
+router.route("/getRequests").get(requests.getAllRequests);
 
 router.route("/status/:id").put(isAdminOrModerator, requests.updateStatus);
 
