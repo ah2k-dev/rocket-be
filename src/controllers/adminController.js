@@ -74,10 +74,23 @@ const createUser = async (req, res) => {
     );
 
     // send email to user with create password link
+
+    const link = `${req.headers["origin"]}/create-password/${token}`;
+    const template = ejs.renderFile(
+      path.join(__dirname, "../ejs/createPassword.ejs"),
+      { link },
+      (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      }
+    );
     await sendMail(
       email,
       "Create password",
-      `Click the link to create password: ${req.headers["origin"]}/create-password/${token}`
+      // `Click the link to create password: ${req.headers["origin"]}/create-password/${token}`
+      template
     );
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);

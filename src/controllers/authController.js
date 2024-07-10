@@ -2,6 +2,7 @@ const User = require("../models/User/user");
 const sendMail = require("../utils/sendMail");
 const SuccessHandler = require("../utils/SuccessHandler");
 const ErrorHandler = require("../utils/ErrorHandler");
+const ejs = require("ejs");
 
 //login
 const login = async (req, res) => {
@@ -52,7 +53,14 @@ const forgotPassword = async (req, res) => {
     await user.save();
     const message = `Your password reset token is ${passwordResetToken} and it expires in 10 minutes`;
     const subject = `Password reset token`;
-    await sendMail(email, subject, message);
+
+    const template = await ejs.renderFile(
+      `${__dirname}/../ejs/resetPassword.ejs`,
+      {
+        otp: passwordResetToken,
+      }
+    );
+    await sendMail(email, subject, template);
     return SuccessHandler(`Password reset token sent to ${email}`, 200, res);
   } catch (error) {
     return ErrorHandler(error.message, 500, req, res);
