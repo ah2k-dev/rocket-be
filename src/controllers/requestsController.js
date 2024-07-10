@@ -374,13 +374,15 @@ const getAllRequests = async (req, res) => {
   // #swagger.tags = ['requests']
   try {
     const statusFilter = req.query.status ? { status: req.query.status } : {};
-
+    console.log(req?.user);
     const snsRequests = await Sns.find({
       ...statusFilter,
+      user: req.user?._id,
       isActive: true,
     });
     const ckmbgRequests = await Ckmbg.find({
       ...statusFilter,
+      user: req.user?._id,
       isActive: true,
     });
 
