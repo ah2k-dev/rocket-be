@@ -6,6 +6,8 @@ const { options } = require("../router");
 const Sns = require("../models/Requests/sns");
 const Ckmbg = require("../models/Requests/ckmbg");
 const Activity = require("../models/User/activities");
+const ejs = require("ejs");
+const path = require("path");
 
 // settings
 const updateProfile = async (req, res) => {
@@ -76,16 +78,22 @@ const createUser = async (req, res) => {
     // send email to user with create password link
 
     const link = `${req.headers["origin"]}/create-password/${token}`;
-    const template = ejs.renderFile(
-      path.join(__dirname, "../ejs/createPassword.ejs"),
-      { link },
-      (err, data) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
+    const template = await ejs.renderFile(
+      `${__dirname}/../ejs/createPassword.ejs`,
+      {
+        link: link,
       }
     );
+    // const template = await ejs.renderFile(
+    //   path.join(__dirname, "../ejs/createPassword.ejs"),
+    //   { link },
+    //   (err, data) => {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //   }
+    // );
     await sendMail(
       email,
       "Create password",
