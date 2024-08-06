@@ -15,12 +15,6 @@ const router = express.Router();
 app.use(fileUpload());
 
 router.post("/", async (req, res) => {
-  const options = {
-    use_filename: true,
-    unique_filename: false,
-    overwrite: true,
-  };
-
   try {
     const { file } = req.files;
     if (!file) {
@@ -29,12 +23,13 @@ router.post("/", async (req, res) => {
 
     // Upload directly to Cloudinary using file buffer
     const result = await cloudinary.uploader
-      .upload_stream(options, (error, result) => {
+      .upload_stream((error, result) => {
         if (error) {
           return ErrorHandler(error.message, 500, req, res);
         }
         return SuccessHandler(
-          { public_id: result.public_id, url: result.secure_url },
+          { filePath: result.secure_url },
+          // { public_id: result.public_id, url: result.secure_url },
           200,
           res
         );
