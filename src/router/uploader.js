@@ -21,15 +21,13 @@ router.post("/", async (req, res) => {
       return ErrorHandler("Please provide a file", 400, req, res);
     }
 
-    // Upload directly to Cloudinary using file buffer
-    const result = await cloudinary.uploader
+   const result = await cloudinary.uploader
       .upload_stream((error, result) => {
         if (error) {
           return ErrorHandler(error.message, 500, req, res);
         }
         return SuccessHandler(
           { filePath: result.secure_url },
-          // { public_id: result.public_id, url: result.secure_url },
           200,
           res
         );

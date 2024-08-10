@@ -81,3 +81,7 @@
 {"level":"error","message":{"date":"2024-08-05T14:34:42.983Z","method":"POST","url":"/"},"service":"user-service"}
 {"date":"2024-08-05T14:39:37.716Z","level":"error","message":"Invalid cloud_name sample","method":"POST","service":"user-service","url":"/"}
 {"date":"2024-08-05T14:40:20.586Z","level":"error","message":"Invalid cloud_name zubair","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-08-05T16:07:01.397Z","level":"error","message":"Cannot destructure property 'file' of 'req.files' as it is undefined.","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-08-05T16:07:16.565Z","level":"error","message":"Please provide a file","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-08-05T16:07:20.761Z","level":"error","message":"Please provide a file","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-08-06T09:01:46.065Z","level":"error","message":"Ckmbg validation failed: type: `checkMy-HealthProvider` is not a valid enum value for path `type`.","method":"POST","service":"user-service","url":"/createCkmpgRequest"}
