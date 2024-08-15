@@ -4,6 +4,7 @@ const Sns = require("../models/Requests/sns");
 const Ckmbg = require("../models/Requests/ckmbg");
 const Activity = require("../models/User/activities");
 const path = require("path");
+const cloudinary = require("../config/cloudinary");
 
 const createSnsRequest = async (req, res) => {
   // #swagger.tags = ['requests']
@@ -196,6 +197,7 @@ const getSnsRequests = async (req, res) => {
         $match: {
           ...typeFilter,
           ...roleFilter,
+          status: { $ne: "completed" },
           isActive: true,
         },
       },
@@ -257,6 +259,7 @@ const getCkmbgRequests = async (req, res) => {
         $match: {
           ...typeFilter,
           ...roleFilter,
+          status: { $ne: "completed" },
           isActive: true,
         },
       },
@@ -290,31 +293,42 @@ const getCkmbgRequests = async (req, res) => {
 
 const updateStatus = async (req, res) => {
   // #swagger.tags = ['requests']
+
   try {
     const { status, type } = req.body;
     if (!status) {
       return ErrorHandler("Please provide status", 400, req, res);
     }
-    if (status == "completed" && !req.files?.report) {
+    if (status === "completed" && !req.files?.report) {
       return ErrorHandler("Please provide report", 400, req, res);
     }
 
     let reportLink = null;
     if (req.files?.report) {
       const reportFile = req.files.report;
-      const pathD = `${reportFile.name}-${Date.now()}`;
-      await reportFile.mv(
-        path.join(__dirname, "../../uploads", pathD),
-        (err) => {
-          if (err) {
-            console.error(err);
-            return ErrorHandler("Error uploading file", 500, req, res);
-          }
-        }
-      );
-      reportLink = `/uploads/${pathD}`;
+
+      // Function to handle file upload
+      const uploadFile = (buffer) => {
+        return new Promise((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { resource_type: "raw" },
+            (error, result) => {
+              if (error) {
+                return reject(error);
+              }
+              resolve(result);
+            }
+          );
+          stream.end(buffer);
+        });
+      };
+
+      // Upload file and get the result
+      const result = await uploadFile(reportFile.data);
+      reportLink = result.secure_url;
     }
 
+    // Update request in database
     let request;
     if (type === "sns") {
       request = await Sns.findByIdAndUpdate(
@@ -340,8 +354,10 @@ const updateStatus = async (req, res) => {
       );
     }
 
+    // Send success response
     SuccessHandler(request, 200, res);
 
+    // Create activity record
     await Activity.create({
       user: req.user._id,
       activity: `${req.user.firstName} updated request status to ${status}`,
