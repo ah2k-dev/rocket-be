@@ -310,15 +310,12 @@ const updateStatus = async (req, res) => {
       // Function to handle file upload
       const uploadFile = (buffer) => {
         return new Promise((resolve, reject) => {
-          const stream = cloudinary.uploader.upload_stream(
-            { resource_type: "raw" },
-            (error, result) => {
-              if (error) {
-                return reject(error);
-              }
-              resolve(result);
+          const stream = cloudinary.uploader.upload_stream((error, result) => {
+            if (error) {
+              return reject(error);
             }
-          );
+            resolve(result);
+          });
           stream.end(buffer);
         });
       };
