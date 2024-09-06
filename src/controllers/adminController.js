@@ -322,6 +322,8 @@ const dashboardCharts = async (req, res) => {
       },
     ]);
 
+    console.log(snsRequests);
+
     const ckmbgRequests = await Ckmbg.aggregate([
       {
         $match: {
@@ -337,12 +339,15 @@ const dashboardCharts = async (req, res) => {
       },
     ]);
 
+    console.log(ckmbgRequests);
+
     snsRequests.forEach((request) => {
       months[request._id - 1].total = request.total;
     });
 
     ckmbgRequests.forEach((request) => {
-      months[request._id - 1].total = request.total;
+      // sum up the previous total
+      months[request._id - 1].total += request.total;
     });
 
     const availableYearsSns = await Sns.aggregate([

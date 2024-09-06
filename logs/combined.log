@@ -1873,3 +1873,12 @@
 {"date":"2024-08-06T09:42:34.217Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/faqs/getFaqs"}
 {"date":"2024-08-06T09:42:38.184Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/faqs/getFaqs"}
 {"date":"2024-08-06T12:28:52.843Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/uploader"}
+{"date":"2024-09-06T13:34:17.789Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-06T13:34:18.522Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-06T13:34:18.533Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-06T13:35:19.979Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-06T13:35:20.015Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-06T13:35:57.422Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-06T13:35:57.455Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-06T13:36:49.210Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-06T13:36:49.247Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
