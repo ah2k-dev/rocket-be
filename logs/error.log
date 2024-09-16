@@ -85,3 +85,13 @@
 {"date":"2024-08-05T16:07:16.565Z","level":"error","message":"Please provide a file","method":"POST","service":"user-service","url":"/"}
 {"date":"2024-08-05T16:07:20.761Z","level":"error","message":"Please provide a file","method":"POST","service":"user-service","url":"/"}
 {"date":"2024-08-06T09:01:46.065Z","level":"error","message":"Ckmbg validation failed: type: `checkMy-HealthProvider` is not a valid enum value for path `type`.","method":"POST","service":"user-service","url":"/createCkmpgRequest"}
+{"date":"2024-09-16T14:08:50.958Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:30:04.972Z","level":"error","message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-09-16T14:32:48.799Z","level":"error","message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-09-16T14:38:40.656Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:39:18.830Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:40:42.867Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:40:46.204Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:41:49.435Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:41:54.958Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:43:22.908Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}

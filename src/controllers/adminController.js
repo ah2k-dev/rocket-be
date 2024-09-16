@@ -8,6 +8,7 @@ const Ckmbg = require("../models/Requests/ckmbg");
 const Activity = require("../models/User/activities");
 const ejs = require("ejs");
 const path = require("path");
+const { default: mongoose } = require("mongoose");
 
 // settings
 const updateProfile = async (req, res) => {
@@ -129,12 +130,15 @@ const getUsers = async (req, res) => {
         ? { role: req.query.role }
         : {};
 
+    const companyFilter = req.user.role === "moderator" ? { company: req.user.company } : {};
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
+    
     const users = await User.find({
       ...searchFilter,
       ...roleFilter,
+      ...companyFilter,
     })
       .select("-password")
       .skip(skip)
@@ -242,9 +246,18 @@ const activateDeactivateUser = async (req, res) => {
 const dashboardStats = async (req, res) => {
   // #swagger.tags = ['admin']
   try {
+    if(req.user.role === "user") return ErrorHandler("Unauthorized", 401, req, res);
+    let userFilter = {};
+    let requestFilter = {};
+    if(req.user.role === "moderator") {
+      userFilter = { company: req.user.company };
+      const users = await User.find({ company: req.user.company, isActive: true });
+      requestFilter = { user: { $in: users.map(user => user._id) } };
+    }
     const totalUsers = await User.countDocuments({
       isActive: true,
       role: "user",
+      ...userFilter,
     });
 
     const totalModerators = await User.countDocuments({
@@ -254,10 +267,12 @@ const dashboardStats = async (req, res) => {
 
     const totalSnsRequests = await Sns.countDocuments({
       isActive: true,
+      ...requestFilter,
     });
 
     const totalCkmbgRequests = await Ckmbg.countDocuments({
       isActive: true,
+      ...requestFilter,
     });
 
     return SuccessHandler(
@@ -291,6 +306,12 @@ const dashboardCharts = async (req, res) => {
             $lt: new Date(`${new Date().getFullYear()}-12-31`),
           },
         };
+    
+    let requestFilter = {};
+    if(req.user.role === "moderator") {
+      const users = await User.find({ company: req.user.company, isActive: true });
+      requestFilter = { user: { $in: users.map(user => mongoose.Types.ObjectId(user._id)) } };
+    }
 
     const months = [
       { month: "January", total: 0 },
@@ -311,6 +332,7 @@ const dashboardCharts = async (req, res) => {
       {
         $match: {
           ...yearFilter,
+          ...requestFilter,
           isActive: true,
         },
       },
@@ -328,6 +350,7 @@ const dashboardCharts = async (req, res) => {
       {
         $match: {
           ...yearFilter,
+          ...requestFilter,
           isActive: true,
         },
       },

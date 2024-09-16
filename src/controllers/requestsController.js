@@ -5,6 +5,7 @@ const Ckmbg = require("../models/Requests/ckmbg");
 const Activity = require("../models/User/activities");
 const path = require("path");
 const cloudinary = require("../config/cloudinary");
+const User = require("../models/User/user");
 
 const createSnsRequest = async (req, res) => {
   // #swagger.tags = ['requests']
@@ -84,10 +85,20 @@ const getCompletedRequests = async (req, res) => {
 
     const type = req.query.type && JSON.parse(req.query.type);
 
-    const roleFilter =
-      req.user.role === "admin" || req.user.role === "moderator"
-        ? {}
-        : { user: req.user._id };
+    // const roleFilter =
+    //   req.user.role === "admin" || req.user.role === "moderator"
+    //     ? {}
+    //     : { user: req.user._id };
+
+    const roleFilter = {};
+    if(req.user.role === "user"){
+      roleFilter.user = req.user._id;
+    } else if(req.user.role === "moderator"){
+      const users = await User.find({company: req.user.company});
+      roleFilter.user = { $in: users.map(user => user._id) };
+    } else {
+      roleFilter.user = { $exists: true };
+    }
 
     // const page = parseInt(req.query.page) || 1;
     // const limit = parseInt(req.query.limit) || 10;
@@ -183,10 +194,20 @@ const getSnsRequests = async (req, res) => {
 
     const typeFilter = req.query.type ? { type: req.query.type } : {};
 
-    const roleFilter =
-      req.user.role === "admin" || req.user.role === "moderator"
-        ? {}
-        : { user: req.user._id };
+    // const roleFilter =
+    //   req.user.role === "admin" || req.user.role === "moderator"
+    //     ? {}
+    //     : { user: req.user._id };
+
+    const roleFilter = {};
+    if(req.user.role === "user"){
+      roleFilter.user = req.user._id;
+    } else if(req.user.role === "moderator"){
+      const users = await User.find({company: req.user.company});
+      roleFilter.user = { $in: users.map(user => user._id) };
+    } else {
+      roleFilter.user = { $exists: true };
+    }
 
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -245,10 +266,20 @@ const getCkmbgRequests = async (req, res) => {
 
     const typeFilter = req.query.type ? { type: req.query.type } : {};
 
-    const roleFilter =
-      req.user.role === "admin" || req.user.role === "moderator"
-        ? {}
-        : { user: req.user._id };
+    // const roleFilter =
+    //   req.user.role === "admin" || req.user.role === "moderator"
+    //     ? {}
+    //     : { user: req.user._id };
+
+    const roleFilter = {};
+    if(req.user.role === "user"){
+      roleFilter.user = req.user._id;
+    } else if(req.user.role === "moderator"){
+      const users = await User.find({company: req.user.company});
+      roleFilter.user = { $in: users.map(user => user._id) };
+    } else {
+      roleFilter.user = { $exists: true };
+    }
 
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;

@@ -1882,3 +1882,64 @@
 {"date":"2024-09-06T13:35:57.455Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
 {"date":"2024-09-06T13:36:49.210Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
 {"date":"2024-09-06T13:36:49.247Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:04:15.008Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:05:21.044Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=moderator"}
+{"date":"2024-09-16T14:06:01.181Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:06:01.741Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:06:01.745Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:06:08.726Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:08:00.425Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:08:50.592Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:08:50.958Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:09:13.527Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:09:14.046Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:09:14.051Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:10:10.420Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:13:36.812Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:13:37.408Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:13:37.417Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:13:43.044Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:30:02.657Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-09-16T14:30:03.629Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:30:04.972Z","level":"error","message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-09-16T14:31:28.088Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:31:28.695Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:31:28.702Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:31:35.335Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:31:43.188Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=moderator"}
+{"date":"2024-09-16T14:32:00.382Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=moderator"}
+{"date":"2024-09-16T14:32:46.974Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/admin/createUser"}
+{"date":"2024-09-16T14:32:47.834Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=moderator"}
+{"date":"2024-09-16T14:32:48.799Z","level":"error","message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","method":"POST","service":"user-service","url":"/createUser"}
+{"date":"2024-09-16T14:37:10.185Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:37:10.753Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:37:10.823Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:37:28.757Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:37:56.885Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:37:57.498Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:37:57.553Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:38:21.906Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/getUsers?page=&pageLimit=10&search=&role=user"}
+{"date":"2024-09-16T14:38:30.196Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getSnsRequests?limit=10"}
+{"date":"2024-09-16T14:38:40.291Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:38:40.656Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:39:18.443Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:39:18.830Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:39:32.411Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:39:32.882Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getRequests"}
+{"date":"2024-09-16T14:40:42.839Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/uploader/"}
+{"date":"2024-09-16T14:40:42.867Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:40:46.197Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/uploader/"}
+{"date":"2024-09-16T14:40:46.204Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:41:49.398Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/uploader/"}
+{"date":"2024-09-16T14:41:49.435Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:41:54.950Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/uploader/"}
+{"date":"2024-09-16T14:41:54.958Z","level":"error","message":"Must supply api_key","method":"POST","service":"user-service","url":"/"}
+{"date":"2024-09-16T14:42:18.967Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/requests/getRequests"}
+{"date":"2024-09-16T14:42:48.795Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:42:49.418Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:42:49.422Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
+{"date":"2024-09-16T14:43:22.573Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:43:22.908Z","level":"error","message":"Invalid credentials","method":"POST","service":"user-service","url":"/login"}
+{"date":"2024-09-16T14:43:33.513Z","level":"info","message":"Request received","method":"POST","service":"user-service","url":"/auth/login"}
+{"date":"2024-09-16T14:43:34.119Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardCharts"}
+{"date":"2024-09-16T14:43:34.123Z","level":"info","message":"Request received","method":"GET","service":"user-service","url":"/admin/dashboardStats"}
