@@ -330,9 +330,9 @@ const updateStatus = async (req, res) => {
     if (!status) {
       return ErrorHandler("Please provide status", 400, req, res);
     }
-    if (status === "completed" && !req.files?.report) {
-      return ErrorHandler("Please provide report", 400, req, res);
-    }
+    // if (status === "completed" && !req.files?.report) {
+    //   return ErrorHandler("Please provide report", 400, req, res);
+    // }
 
     let reportLink = null;
     if (req.files?.report) {
